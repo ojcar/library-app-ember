@@ -10,6 +10,16 @@ export default Ember.Route.extend({
       newLibrary.save().then(() => this.transitionTo('libraries'))
     },
 
+    setupController: function(controller, model) {
+      this._super(controller, model);
+      controller.set('title', 'Edit Library');
+      controller.set('buttonLabel', 'Save changes');
+    },
+
+    renderTemplate() {
+      this.render('libraries/form');
+    },
+
     willTransition(transition) {
       let model = this.controller.get('model');
 
