@@ -4,6 +4,7 @@
   {{#each model as |library|}}
     <div class="col-md-4">
       {{#library-item item=library}}
+        {{#link-to 'libraries.show' library.id class='btn btn-primary btn-xs'}}Show{{/link-to}}
         {{#link-to 'libraries.edit' library.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
         <buttton class="btn btn-danger btn-xs" {{action 'deleteLibrary' library}}>Delete</buttton>
       {{/library-item}}
