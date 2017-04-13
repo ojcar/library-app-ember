@@ -1,4 +1,6 @@
 <h2>The Thing - {{ model.id }}</h2>
+<h3>{{library-title model.name}}</h3>
+<h3>{{library/library-title model.name}}</h3>
 
 {{#library-item item=model}}
   {{#link-to 'libraries.edit' model.id class='btn btn-success btn-xs'}}Edit{{/link-to}}
